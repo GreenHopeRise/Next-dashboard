@@ -1,7 +1,9 @@
-import React from 'react'
-
-export default function page() {
+export default function HomePage() {
   return (
-    <div>page</div>
-  )
+    <main className="flex min-h-screen items-center justify-center">
+      <h1 className="text-3xl font-bold">
+        SaaS Admin Dashboard
+      </h1>
+    </main>
+  );
 }
