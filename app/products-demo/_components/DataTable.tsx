@@ -1,6 +1,7 @@
 // import { Product } from "@/app/types/products";
 import Image from "next/image";
 import { Product } from "../types/products";
+import { productColumns } from "../_data/columns";
 // import { Product } from "../_types/product";
 
 type DataTableProps = {
@@ -14,11 +15,11 @@ export default function DataTable({
     <table className="w-full border-collapse">
       <thead>
         <tr className="border-b">
-          <th className="p-3 text-left">Image</th>
-          <th className="p-3 text-left">Product</th>
-          <th className="p-3 text-left">Price</th>
-          <th className="p-3 text-left">Stock</th>
-          <th className="p-3 text-left">Category</th>
+          {
+            productColumns.map(p=>(
+              <th key={p.key} className="p-3 text-left">{p.label}</th>
+            ))
+          }
         </tr>
       </thead>
 
