@@ -1,6 +1,7 @@
 import { Product } from "@/app/types/products";
 import SearchBox from "./_components/SearchBox";
 import getProducts from "@/app/services/products";
+import DeleteProductDialog from "./_components/DeleteProductDialog";
 
 type ProductsPageProps = {
   searchParams: Promise<{
@@ -16,8 +17,10 @@ export default async function ProductsPage({
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-bold">Products</h1>
+      <DeleteProductDialog/>
 
       <SearchBox />
+
 
       <ol className="space-y-2" >
         {product.map((p) => (
